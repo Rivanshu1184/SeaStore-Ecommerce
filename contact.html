@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact-US-SeaStore</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdf7d9acb9.js" crossorigin="anonymous"></script>
+    <style>
+      #dialogoverlay{
+        display: none;
+        opacity: .8;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background: #FFF;
+        width: 100%;
+        z-index: 10;
+      }
+      #dialogbox{
+        display: none;
+        position: fixed;
+        background-image: url("images/hmm.jpg");
+        border-radius:5px; 
+          margin-top: 200px;
+        width:550px;
+        z-index: 10;
+      }
+      #dialogbox > div{ background:#FFF; margin:8px; }
+      #dialogbox > div > #dialogboxhead{ background-image: url("images/head.jpg"); font-size:19px; padding:10px; color:#fff;}
+      #dialogbox > div > #dialogboxbody{ background-image: url("images/body.jpg"); padding:20px; color:#fff }
+      #dialogbox > div > #dialogboxfoot{ background-image: url("images/head.jpg"); padding:10px; text-align:right; }
+      </style>
+      <script>
+      function CustomAlert(){
+          this.render = function(dialog){
+              var winW = window.innerWidth;
+              var winH = window.innerHeight;
+              var dialogoverlay = document.getElementById('dialogoverlay');
+              var dialogbox = document.getElementById('dialogbox');
+              dialogoverlay.style.display = "block";
+              dialogoverlay.style.height = winH+"px";
+              dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+              dialogbox.style.top = "100px";
+              dialogbox.style.display = "block";
+              document.getElementById('dialogboxhead').innerHTML = "Acknowledge This Message";
+              document.getElementById('dialogboxbody').innerHTML = dialog;
+              document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+          }
+        this.ok = function(){
+          document.getElementById('dialogbox').style.display = "none";
+          document.getElementById('dialogoverlay').style.display = "none";
+        }
+      }
+      var Alert = new CustomAlert();
+      </script>
+  </head> 
+<body>
+	      <div class="header">
+
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+         <a href="index.html"> <img src="images/logo.png" width="125px" /></a>
+        </div>
+        <nav>
+          <ul id="menuitems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </nav>
+       <a href="cart.html"> <img src="images/cart.png" width="30px" height="30px"></a>
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      </div>
+
+
+                <!-- CONTACT FORM -->
+      <div class="title-contact">
+        Contact Us
+      </div>
+	<div class="contact-page">
+		<form class="contact-form" name="myform" action="action.html" onsubmit="return validate()" > 
+			<div class="input-group">
+				<input type="text" id="username">
+				<label for="username"><i class="fas fa-user"></i> Your Name</label>
+			</div>
+			<div class="input-group">
+				<input type="text" id="number"  >
+				<label for="number"><i class="fas fa-phone-square-alt"></i> Phone No.</label>
+			</div>
+			<div class="input-group">
+				<input type="email" id="email" >
+				<label for="email"><i class="fas fa-envelope"></i> Email ID</label>
+			</div>
+			<div class="input-group">
+				<textarea id="message" rows="8" ></textarea>
+				<label for="message"><i class="fas fa-comments"></i> Your Message</label>
+			</div>
+			<button type="submit"> Submit <i class="fas fa-paper-plane"></i></button>
+		</form>
+	</div>
+
+
+
+<!-- Footer -->
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3>Download Our App</h3>
+        <p>Download App for Android and ios mobile phone.</p>
+        <div class="app-logo">
+          <img src="images/play-store.png" >
+          <img src="images/app-store.png" >
+        </div>
+      </div>
+      <div class="footer-col-2">
+        <img src="images/logo.png" >
+        <p>Our Purpose is to Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+      </div>
+      <div class="footer-col-3">
+        <h3>Useful Links</h3>
+       <ul>
+         <li>Coupons</li>
+         <li>Blog Post</li>
+         <li>Return Policy</li>
+         <li>Join Affiliate</li>
+       </ul>
+      </div>
+      <div class="footer-col-4">
+        <h3>Follow us</h3>
+       <ul>
+         <li>Facebook</li>
+         <li>Twitter</li>
+         <li>Instagram</li>
+         <li>Youtube</li>
+       </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">Copyright 2022 - HTML and Css Project</p>
+  </div>
+                              <!-- JS FOR MENU -->
+<script>
+  var menuitems =document.getElementById("menuitems");
+  menuitems.style.maxHeight="0px";
+
+  function menutoggle()
+    {
+      if(menuitems.style.maxHeight == "0px")
+      {
+        menuitems.style.maxHeight="200px";
+      }
+      else{
+        menuitems.style.maxHeight = "0px";
+      }
+    }
+  
+</script>
+          <!-- SCROLL BUTTON  -->
+<section class="scroll">
+  <a class="gotopbtn" href="#"><i class="fas fa-arrow-up"></i> </a>
+
+</section>
+
+<script>
+  function validate()
+{
+  var username = document.getElementById("username").value;
+  var number = document.getElementById("number").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  if(username.length < 5){
+    Alert.render("Please Enter valid Name");
+    return false;
+  }
+  if(isNaN(number) || number.length != 10){
+    Alert.render("Please Enter valid Phone Number");
+    return false;
+  }
+  if(email.indexOf("@") == -1 || email.length < 6){
+    Alert.render("Please Enter valid Email");
+    return false;
+  }
+  if(message.length <= 20){
+    Alert.render("Please Enter More Than 20 Characters");
+    return false;
+  }
+
+}
+
+</script>
+
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
